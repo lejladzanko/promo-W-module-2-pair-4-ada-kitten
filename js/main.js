@@ -18,8 +18,6 @@ const kittenOne = `<li class="card">
 </article>
 </li>`;
 
-list.innerHTML = kittenOne + kittenTwo + kittenThree
-
 const kittenTwo = `<li class="card">
 <img
   class="card_img"
@@ -50,8 +48,6 @@ const kittenThree = `<li class="card">
 </p>
 </li>`;
 
-
-
-
+list.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 
