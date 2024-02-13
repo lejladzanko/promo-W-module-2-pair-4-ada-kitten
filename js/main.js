@@ -29,7 +29,7 @@ const kittenThreeNameUpperCase = kittenThreeName.toUpperCase();;
 
 
 
-const kittenOne = `<li class="card">
+const kittenOne = `<li class="card js-kitten-1">
 <article>
   <img
     class="card_img"
@@ -43,8 +43,7 @@ const kittenOne = `<li class="card">
 </li>`;
 console.log (kittenOneNameUpperCase)
 
-
-const kittenTwo = `<li class="card">
+const kittenTwo = `<li class="card js-kitten-2">
 <img
   class="card_img"
   src="${kittenTwoImage}"
@@ -55,7 +54,7 @@ const kittenTwo = `<li class="card">
 <p class="card_description">${kittenTwoDesc}</p>
 </li>`;
 
-const kittenThree = `<li class="card">
+const kittenThree = `<li class="card js-kitten-3">
 <img
   class="card_img"
   src="${kittenThreeImage}"
@@ -68,22 +67,24 @@ const kittenThree = `<li class="card">
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-kittenOne.classList.add('hidden');
+const input_search_desc = document.querySelector('.js_in_search_desc');
+const descrSearchText = input_search_desc.value;
 
-// const input_search_desc = document.querySelector('.js_in_search_desc');
-// const descrSearchText = input_search_desc.value;
+if (descrSearchText == "") {
+ // left blank intentionally
+} else if (kittenOneDesc.includes(descrSearchText)) {
+  console.log("Gatito 1 cumple con la búsqueda");
+  document.querySelector('.js-kitten-2').classList.add('hidden');
+  document.querySelector('.js-kitten-3').classList.add('hidden');
+} else if (kittenTwoDesc.includes(descrSearchText)) {
+  console.log("Gatito 2 cumple con la búsqueda");
+  document.querySelector('.js-kitten-1').classList.add('hidden');
+  document.querySelector('.js-kitten-3').classList.add('hidden');
+} else if (kittenThreeDesc.includes(descrSearchText)) {
+  console.log("Gatito 3 cumple con la búsqueda");
+  document.querySelector('.js-kitten-1').classList.add('hidden');
+  document.querySelector('.js-kitten-2').classList.add('hidden');
+}
 
-// if( kittenOneDesc.includes(descrSearchText) ) {
-//   console.log('Gatito 1 cumple con la búsqueda')
-//   } 
-  
-//   if( kittenTwoDesc.includes(descrSearchText) ) {
-//     console.log('Gatito 2 cumple con la búsqueda')
-//   }
-  
-//   if( kittenThreeDesc.includes(descrSearchText) ) {
-//     console.log('Gatito 3 cumple con la búsqueda')
-//   }
-
-//   // const kittenOne = document.querySelector('.js-kittenOne');
-//   kittenOne.classList.add('hidden');
+// const kittenOne = document.querySelector('.js-kittenOne');
+kittenOne.classList.add("hidden");
