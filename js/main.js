@@ -68,4 +68,22 @@ const kittenThree = `<li class="card">
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
 
+kittenOne.classList.add('hidden');
 
+// const input_search_desc = document.querySelector('.js_in_search_desc');
+// const descrSearchText = input_search_desc.value;
+
+// if( kittenOneDesc.includes(descrSearchText) ) {
+//   console.log('Gatito 1 cumple con la búsqueda')
+//   } 
+  
+//   if( kittenTwoDesc.includes(descrSearchText) ) {
+//     console.log('Gatito 2 cumple con la búsqueda')
+//   }
+  
+//   if( kittenThreeDesc.includes(descrSearchText) ) {
+//     console.log('Gatito 3 cumple con la búsqueda')
+//   }
+
+//   // const kittenOne = document.querySelector('.js-kittenOne');
+//   kittenOne.classList.add('hidden');
