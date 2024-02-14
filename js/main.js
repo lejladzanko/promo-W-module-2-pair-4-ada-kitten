@@ -87,4 +87,36 @@ if (descrSearchText == "") {
 }
 
 // const kittenOne = document.querySelector('.js-kittenOne');
-kittenOne.classList.add("hidden");
+// kittenOne.classList.add("hidden");
+
+
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
+
+const buttonAdd = document.querySelector('.js-btn-add');
+const buttonCancel = document.querySelector ('.js-btn-cancel');
+
+buttonAdd.addEventListener('click', (event) =>{
+  event.preventDefault();
+  console.log('La usuaria ha hecho click');
+
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
+    console.log(labelMessageError)
+  } else {
+  labelMessageError.innerHTML = "¡Tu gatito ha sido registrado!";
+  }
+  })
+
+buttonCancel.addEventListener('click', (event) =>{
+  event.preventDefault();
+  console.log('Ha pulsado cancelar')
+  
+})
