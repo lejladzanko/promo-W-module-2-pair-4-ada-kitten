@@ -95,28 +95,73 @@ const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
 const labelMessageError = document.querySelector('.js-label-error');
 
-const buttonAdd = document.querySelector('.js-btn-add');
+// const buttonAdd = document.querySelector('.js-btn-add');
 const buttonCancel = document.querySelector ('.js-btn-cancel');
 
-buttonAdd.addEventListener('click', (event) =>{
-  event.preventDefault();
-  console.log('La usuaria ha hecho click');
+// buttonAdd.addEventListener('click', (event) =>{
+//   event.preventDefault();
+//   console.log('La usuaria ha hecho click');
 
-  const valueDesc = inputDesc.value;
-  const valuePhoto = inputPhoto.value;
-  const valueName = inputName.value;
+  // const valueDesc = inputDesc.value;
+  // const valuePhoto = inputPhoto.value;
+  // const valueName = inputName.value;
   
 
-  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
-    console.log(labelMessageError)
-  } else {
-  labelMessageError.innerHTML = "¡Tu gatito ha sido registrado!";
-  }
-  })
+  // if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+  //   labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
+  //   console.log(labelMessageError)
+  // } else {
+  // labelMessageError.innerHTML = "¡Tu gatito ha sido registrado!";
+  // }
+  // })
 
 buttonCancel.addEventListener('click', (event) =>{
   event.preventDefault();
   console.log('Ha pulsado cancelar')
   
 })
+
+const newForm = document.querySelector('.js-new-form');
+
+function showNewCatForm(){
+  newForm.classList.remove('collapsed');
+}
+
+function hideNewCatForm(){
+  newForm.classList.add('collapsed');
+}
+
+const newFormElement = document.querySelector ('.js-new-form'); 
+
+const linkNewFormElement = document.querySelector ('.js-btn-form');
+
+function handleClickNewCatForm(event) {
+  event.preventDefault();
+  if (newFormElement.classList.contains('collapsed')) {
+   newFormElement.classList.remove ('collapsed');
+  } else {
+    newFormElement.classList.add ('collapsed');
+  }
+}
+
+linkNewFormElement.addEventListener('click', handleClickNewCatForm);
+
+const buttonAdd = document.querySelector ('.js-btn-add');
+
+
+function addNewKitten(event) {
+  event.preventDefault();
+
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+      labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
+      console.log(labelMessageError)
+    } else {
+    labelMessageError.innerHTML = "¡Tu gatito ha sido registrado!";
+
+}}
+
+buttonAdd.addEventListener('click', addNewKitten);
