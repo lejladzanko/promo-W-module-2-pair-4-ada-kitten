@@ -155,10 +155,10 @@ function addNewKitten(event) {
   const valueDesc = inputDesc.value;
   const valuePhoto = inputPhoto.value;
   const valueName = inputName.value;
-  
+
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
       labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
-      console.log(labelMessageError)
+      console.log(labelMessageError);
     } else {
     labelMessageError.innerHTML = "¡Tu gatito ha sido registrado!";
 
