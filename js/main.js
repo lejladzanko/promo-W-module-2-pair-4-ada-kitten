@@ -1,5 +1,4 @@
 'use strict';
-'debugger'
 
 const list = document.querySelector('.js-list');
 
@@ -91,10 +90,10 @@ list.innerHTML = kittenOne + kittenTwo + kittenThree;
 // kittenOne.classList.add("hidden");
 
 
-const inputDesc = document.querySelector('.js-input-desc');
-const inputPhoto = document.querySelector('.js-input-photo');
-const inputName = document.querySelector('.js-input-name');
-const labelMessageError = document.querySelector('.js-label-error');
+// const inputDesc = document.querySelector('.js-input-desc');
+// const inputPhoto = document.querySelector('.js-input-photo');
+// const inputName = document.querySelector('.js-input-name');
+// const labelMessageError = document.querySelector('.js-label-error');
 
 // const buttonAdd = document.querySelector('.js-btn-add');
 const buttonCancel = document.querySelector ('.js-btn-cancel');
@@ -171,27 +170,25 @@ buttonAdd.addEventListener('click', addNewKitten);
 
 
 
-const buttonSearch = document.querySelector ('.js-button-search');
-
+const buttonSearch = document.querySelector('.js-button-search');
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
 
-
-// const filterKitten = (event) => {
-//   event.preventDefault ();
-// }
-
 const filterKitten = (event) => {
-  if (kittenDesc1.includes(descrSearchText)) {
-    listElement.innerHTML += kittenOne;
+event.preventDefault();
+list.innerHTML = '';
+  if (kittenOneDesc.includes(descrSearchText)) {
+    list.innerHTML += kittenOne;
   }
-  if (kittenDesc2.includes(descrSearchText)) {
-    listElement.innerHTML += kittenTwo;
+  if (kittenTwoDesc.includes(descrSearchText)) {
+    list.innerHTML += kittenTwo;
   }
-  if (kittenDesc3.includes(descrSearchText)) {
-    listElement.innerHTML += kittenThree;
+  if (kittenThreeDesc.includes(descrSearchText)) {
+    list.innerHTML += kittenThree;
   }
 };
+
+
 
 buttonSearch.addEventListener('click', filterKitten);
