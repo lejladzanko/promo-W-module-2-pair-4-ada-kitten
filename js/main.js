@@ -173,22 +173,21 @@ buttonAdd.addEventListener('click', addNewKitten);
 const buttonSearch = document.querySelector('.js-button-search');
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
-const descrSearchText = input_search_desc.value;
+// const descrSearchText = input_search_desc.value;
 
 const filterKitten = (event) => {
-event.preventDefault();
-list.innerHTML = '';
-  if (kittenOneDesc.includes(descrSearchText)) {
-    list.innerHTML += kittenOne;
-  }
-  if (kittenTwoDesc.includes(descrSearchText)) {
-    list.innerHTML += kittenTwo;
-  }
-  if (kittenThreeDesc.includes(descrSearchText)) {
-    list.innerHTML += kittenThree;
-  }
+  event.preventDefault();
+  const descrSearchText = input_search_desc.value;
+ 
+    if (kittenOneDesc.includes(descrSearchText)) {
+      list.innerHTML += kittenOne;
+    }
+    if (kittenTwoDesc.includes(descrSearchText)) {
+      list.innerHTML += kittenTwo;
+    }
+    if (kittenThreeDesc.includes(descrSearchText)) {
+      list.innerHTML += kittenThree;
+    }
 };
-
-
 
 buttonSearch.addEventListener('click', filterKitten);
