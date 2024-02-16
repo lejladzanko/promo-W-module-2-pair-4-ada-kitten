@@ -1,4 +1,5 @@
 'use strict';
+'debugger'
 
 const list = document.querySelector('.js-list');
 
@@ -67,24 +68,24 @@ const kittenThree = `<li class="card js-kitten-3">
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-const input_search_desc = document.querySelector('.js_in_search_desc');
-const descrSearchText = input_search_desc.value;
+// const input_search_desc = document.querySelector('.js_in_search_desc');
+// const descrSearchText = input_search_desc.value;
 
-if (descrSearchText == "") {
- // left blank intentionally
-} else if (kittenOneDesc.includes(descrSearchText)) {
-  console.log("Gatito 1 cumple con la búsqueda");
-  document.querySelector('.js-kitten-2').classList.add('hidden');
-  document.querySelector('.js-kitten-3').classList.add('hidden');
-} else if (kittenTwoDesc.includes(descrSearchText)) {
-  console.log("Gatito 2 cumple con la búsqueda");
-  document.querySelector('.js-kitten-1').classList.add('hidden');
-  document.querySelector('.js-kitten-3').classList.add('hidden');
-} else if (kittenThreeDesc.includes(descrSearchText)) {
-  console.log("Gatito 3 cumple con la búsqueda");
-  document.querySelector('.js-kitten-1').classList.add('hidden');
-  document.querySelector('.js-kitten-2').classList.add('hidden');
-}
+// if (descrSearchText == "") {
+//  // left blank intentionally
+// } else if (kittenOneDesc.includes(descrSearchText)) {
+//   console.log("Gatito 1 cumple con la búsqueda");
+//   document.querySelector('.js-kitten-2').classList.add('hidden');
+//   document.querySelector('.js-kitten-3').classList.add('hidden');
+// } else if (kittenTwoDesc.includes(descrSearchText)) {
+//   console.log("Gatito 2 cumple con la búsqueda");
+//   document.querySelector('.js-kitten-1').classList.add('hidden');
+//   document.querySelector('.js-kitten-3').classList.add('hidden');
+// } else if (kittenThreeDesc.includes(descrSearchText)) {
+//   console.log("Gatito 3 cumple con la búsqueda");
+//   document.querySelector('.js-kitten-1').classList.add('hidden');
+//   document.querySelector('.js-kitten-2').classList.add('hidden');
+// }
 
 // const kittenOne = document.querySelector('.js-kittenOne');
 // kittenOne.classList.add("hidden");
@@ -165,3 +166,32 @@ function addNewKitten(event) {
 }}
 
 buttonAdd.addEventListener('click', addNewKitten);
+
+
+
+
+
+const buttonSearch = document.querySelector ('.js-button-search');
+
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+const descrSearchText = input_search_desc.value;
+
+
+// const filterKitten = (event) => {
+//   event.preventDefault ();
+// }
+
+const filterKitten = (event) => {
+  if (kittenDesc1.includes(descrSearchText)) {
+    listElement.innerHTML += kittenOne;
+  }
+  if (kittenDesc2.includes(descrSearchText)) {
+    listElement.innerHTML += kittenTwo;
+  }
+  if (kittenDesc3.includes(descrSearchText)) {
+    listElement.innerHTML += kittenThree;
+  }
+};
+
+buttonSearch.addEventListener('click', filterKitten);
