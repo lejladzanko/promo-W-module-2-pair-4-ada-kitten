@@ -231,17 +231,30 @@ const filterKitten = (event) => {
 
   list.innerHTML = '';
  
-    if (kittenData_1.desc.includes(descrSearchText)) {
+    if (kittenData.desc.includes(descrSearchText)) {
       list.innerHTML += renderKitten(kittenData_1);
+    
     }
-    if (kittenData_2.desc.includes(descrSearchText)) {
+    if (kittenData.desc.includes(descrSearchText)) {
       list.innerHTML += renderKitten(kittenData_2);
     }
-    if (kittenData_3.desc.includes(descrSearchText)) {
+    if (kittenData.desc.includes(descrSearchText)) {
       list.innerHTML += renderKitten(kittenData_3);
     }
+  }
 
-};
+  // Filtrar gatos con la lista array KittenDataList
+  
+    // const filteredKittens = kittenDataList.filter(kitten => 
+    //   kitten.desc.toLowerCase().includes(descrSearchText)
+    // );
+  
+//     // Para cada gatito filtrado, genera su HTML y lo agrega a la lista
+//     filteredKittens.forEach(kitten => {
+//       list.innerHTML += renderKitten(kitten);
+//     });
+//   };
+
+// buttonSearch.addEventListener('click', filterKitten);
 
 
-buttonSearch.addEventListener('click', filterKitten);
