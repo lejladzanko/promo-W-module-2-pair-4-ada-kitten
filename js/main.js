@@ -1,6 +1,6 @@
 'use strict';
 
-const list = document.querySelector('.js-list');
+// const list = document.querySelector('.js-list');
 
 // const kittenOneImage = 'https://dev.adalab.es/gato-siames.webp';
 // const kittenOneName = 'Patricio';
@@ -53,7 +53,7 @@ const kittenDataList = [
 ]
 
   function renderKitten(kittenData) {
-    const item1 = `
+    const kittenItem = `
     <li class="card js-kitten">
       <img class="card_img" src="${kittenData.image}" alt="gatito"/>
       <h3 class="card_title">${kittenData.name.toUpperCase()}</h3>
@@ -61,12 +61,22 @@ const kittenDataList = [
       <p class="card_description">${kittenData.desc}</p>
     </li>
     `
-    return item1;
+    return kittenItem;
 
   }
 
-  list.innerHTML = renderKitten(kittenDataList[0]) + renderKitten(kittenDataList[1]) + renderKitten(kittenDataList[2]);
+  // list.innerHTML = renderKitten(kittenDataList[0]) + renderKitten(kittenDataList[1]) + renderKitten(kittenDataList[2]);
 
+  function renderKittenList(kittenDataList) {
+    const list = document.querySelector('.js-list');
+    
+    list.innerHTML = '';
+    for (const kittenItem of kittenDataList) {
+      const kittenHTML = renderKitten(kittenItem);
+      
+      list.innerHTML += kittenHTML;
+    }
+  }
 
 // function renderKitten(kittenData) {
 //   return `<li class="card js-kitten">
