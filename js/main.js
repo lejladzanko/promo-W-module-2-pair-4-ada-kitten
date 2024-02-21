@@ -1,6 +1,6 @@
 'use strict';
 
-// const list = document.querySelector('.js-list');
+const list = document.querySelector('.js-list');
 
 // const kittenOneImage = 'https://dev.adalab.es/gato-siames.webp';
 // const kittenOneName = 'Patricio';
@@ -68,15 +68,18 @@ const kittenDataList = [
   // list.innerHTML = renderKitten(kittenDataList[0]) + renderKitten(kittenDataList[1]) + renderKitten(kittenDataList[2]);
 
   function renderKittenList(kittenDataList) {
-    const list = document.querySelector('.js-list');
-    
-    list.innerHTML = '';
+    console.log('Hola');
+
+        list.innerHTML = '';
     for (const kittenItem of kittenDataList) {
       const kittenHTML = renderKitten(kittenItem);
+
       
       list.innerHTML += kittenHTML;
     }
   }
+
+  renderKittenList(kittenDataList);
 
 // function renderKitten(kittenData) {
 //   return `<li class="card js-kitten">
